@@ -6,19 +6,20 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;  /* Ensures the full page height is used */
 }
 
 .container {
     background-color: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
     width: 100%;
+    max-width: 500px;  /* Keeps the container at a reasonable width on large screens */
     text-align: center;
     border: 5px solid orange;
+    margin-top: 20px;  /* Adds margin at the top */
 }
 
 h1, h2 {
@@ -36,11 +37,7 @@ h1, h2 {
     color: #333;
 }
 
-input[type="range"] {
-    width: 100%;
-    margin: 10px 0;
-}
-
+input[type="range"],
 input[type="number"] {
     width: 100%;
     padding: 10px;
@@ -64,13 +61,12 @@ button:hover {
     background-color: #e65c00;
 }
 
-.state-display {
-    margin-top: 20px;
-}
-
 .state-display p {
     font-size: 18px;
-    color: white;
+    color: #ff6600;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .modules {
@@ -85,4 +81,27 @@ button:hover {
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    input[type="range"],
+    input[type="number"] {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
