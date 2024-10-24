@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARQ Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PARQ Simulator</h1>
+
+        <!-- Inputs for Constants A, B, and C -->
+        <div class="controls">
+            <div class="input-group">
+                <label for="numberA">Constant A: </label>
+                <input type="number" id="numberA" min="0" max="100000000" value="50000000" onchange="updateNumberFromInput('A')" />
+                <span>(<span id="valueAPercent">50</span>%)</span>
+                <input type="range" id="sliderA" min="0" max="100" value="50" oninput="updateValueFromSlider('A')" />
+            </div>
+
+            <div class="input-group">
+                <label for="numberB">Constant B: </label>
+                <input type="number" id="numberB" min="0" max="100000000" value="50000000" onchange="updateNumberFromInput('B')" />
+                <span>(<span id="valueBPercent">50</span>%)</span>
+                <input type="range" id="sliderB" min="0" max="100" value="50" oninput="updateValueFromSlider('B')" />
+            </div>
+
+            <div class="input-group">
+                <label for="numberC">Constant C: </label>
+                <input type="number" id="numberC" min="0" max="100000000" value="50000000" onchange="updateNumberFromInput('C')" />
+                <span>(<span id="valueCPercent">50</span>%)</span>
+                <input type="range" id="sliderC" min="0" max="100" value="50" oninput="updateValueFromSlider('C')" />
+            </div>
+        </div>
+
+        <!-- Button to Start Simulation -->
+        <button onclick="startSimulation()">Start Simulation</button>
+
+        <!-- Display the current state -->
+        <div class="state-display">
+            <h2>Simulation Status</h2>
+            <p id="simulationResult">Simulation not started.</p>
+        </div>
+
+        <!-- Modules to Display Values -->
+        <div class="modules">
+            <h2>Module Outputs</h2>
+            <div class="module" id="module1">Аксум (Aksum): <span id="module1Value">-</span></div>
+            <div class="module" id="module2">Галата (Galata): <span id="module2Value">-</span></div>
+            <div class="module" id="module3">Белем (Belem): <span id="module3Value">-</span></div>
+            <div class="module" id="module4">Сююмбике (Syuymbike): <span id="module4Value">-</span></div>
+            <div class="module" id="module5">Си-Эл (Si-El): <span id="module5Value">-</span></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
